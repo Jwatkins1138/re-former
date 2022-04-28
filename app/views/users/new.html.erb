@@ -1,0 +1,33 @@
+<h1>Users#new</h1>
+<%# <form accept-charset='UTF-8' method='post' action='/users'>
+  <label for='username'>Username</label>
+            <input type="text" name='user[username]' placeholder='Enter username'> <br>
+  <label for='email'>Email</label>
+            <input type="email" name='user[email]' placeholder='Enter email'> <br>          
+  <label for='password'>Password</label>
+            <input type="password" name='user[password]' placeholder='Enter password'> <br>
+  <input type='submit' value='Submit'>                    
+</form>
+<p>Find me in app/views/users/new.html.erb</p> %>
+<%# <%= form_tag('/users', method: 'post') do %>
+  <%# <%= label_tag(:username)%> 
+  <%# <%= text_field_tag(:username) %> 
+  <%# <%= label_tag(:email)%> 
+  <%# <%= email_field_tag(:email) %> 
+  <%# <%= label_tag(:password)%> 
+  <%# <%= password_field_tag(:password) %> 
+  <%# <%= submit_tag('Submit')%> 
+<%# <% end %>
+
+<%= form_with model: @user do |form|%>
+  <%= form.label :username%>
+  <%= form.text_field :username, value: 'example'%>
+
+  <%= form.label :email%>
+  <%= form.email_field :email, value: 'example@example.com'%>
+
+  <%= form.label :password%>
+  <%= form.password_field :password, value: '*****'%>
+
+  <%= form.submit%>
+<% end%>
